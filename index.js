@@ -1,80 +1,109 @@
 function pelamarSubmitData() {
     return new Promise ((resolve, reject) => {
-        resolve('pelamar submit data ke HR')
+        resolve('pelamar submit data ke HR \n')
     })
 }
 
-function notifPelamarPsikotest() {
+function notifPelamarPsikotest(message) {
     return new Promise((resolve, reject) => {
-        resolve('HR notif pelamar untuk psikotest')
+        resolve(message +'HR notif pelamar untuk psikotest \n')
     })
 }
 
-function pelamarDatangPsikotest() {
+function pelamarDatangPsikotest(message) {
     return new Promise((resolve, reject) => {
-        resolve('pelamar datang psikotest')
+        resolve(message +'pelamar datang psikotest \n')
     })
 }
 
-function menyerahkanHasilTest() {
+function menyerahkanHasilTest(message) {
     return new Promise((resolve, reject) => {
-        resolve('Pelamar menyerahkan hasil test ke HR')
+        resolve(message +'Pelamar menyerahkan hasil test ke HR \n')
     })
 }
 
-function followupHasilPsikotest() {
+function followupHasilPsikotest(message) {
     return new Promise((resolve, reject) => {
-        resolve('HR followup hasil Psikotest ke user')
+        resolve(message +'HR followup hasil Psikotest ke user \n')
     })
 }
 
-function pelamarKonfirmasiOk() {
+function pelamarKonfirmasiOk(message) {
     return new Promise((resolve, reject) => {
-        resolve('User konfirmasi ok ke HR soal Pelamar')
+        resolve(message +'User konfirmasi ok ke HR soal Pelamar \n')
     })
 }
 
-function notifPelamarInterview() {
+function notifPelamarInterview(message) {
     return new Promise((resolve, reject) => {
-        resolve('HR notif ke Pelamar untuk interview dengan User')
+        resolve(message +'HR notif ke Pelamar untuk interview dengan User \n')
     })
 }
 
-function pelamarDatangInterview() {
+function pelamarDatangInterview(message) {
     return new Promise((resolve, reject) => {
-        resolve('Pelamar datang ke User untuk interview')
+        resolve(message +'Pelamar datang ke User untuk interview \n')
     })
 }
 
-function konfirmasiPelamarLulus() {
+function konfirmasiPelamarLulus(message) {
     return new Promise((resolve, reject) => {
-        resolve('User konfirmasi ok ke HR soal Pelamar lulus interview')
+        resolve(message +'User konfirmasi ok ke HR soal Pelamar lulus interview \n')
     })
 }
 
-function notifMulaiKerja() {
+function notifMulaiKerja(message) {
     return new Promise((resolve, reject) => {
-        resolve('HR Notif ke Pelamar untuk mulai bekerja')
+        resolve(message +'HR Notif ke Pelamar untuk mulai bekerja \n')
     })
 }
 
-function mulaiMasukKerja() {
+function mulaiMasukKerja(message) {
     return new Promise((resolve, reject) => {
-        resolve('Pelamar mulai masuk bekerja')
+        resolve(message +'Pelamar mulai masuk bekerja \n')
     })
 }
 
 
 pelamarSubmitData()
-    .then(() => {
-        return notifPelamarPsikotest();
+    .then(result => {
+        return notifPelamarPsikotest(result);
     })
-    .then(() => {
-        return pelamarDatangPsikotest();
+    .then(result => {
+        return pelamarDatangPsikotest(result);
     })
-    .then(() => {
-        console.log('finished')
+    .then(result => {
+        return menyerahkanHasilTest(result);
     })
+    .then(result => {
+        return followupHasilPsikotest(result);
+    })
+    .then(result => {
+        return pelamarKonfirmasiOk(result);
+    })
+    .then(result => {
+        return notifPelamarInterview(result);
+    })
+    .then(result => {
+        return pelamarDatangInterview(result);
+    })
+    .then(result => {
+        return konfirmasiPelamarLulus(result);
+    })
+    .then(result => {
+        return notifMulaiKerja(result);
+    })
+    .then(result => {
+        return mulaiMasukKerja(result);
+    })
+    .then(result => {
+        console.log(result)
+    })
+
+// Promise.all([pelamarSubmitData(), notifPelamarPsikotest(), pelamarDatangPsikotest()])
+//     .then((result) => {
+//         console.log('finished\n' + result)
+//     })
 
 
 console.log('try it')
